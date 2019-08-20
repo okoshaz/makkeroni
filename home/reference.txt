@@ -1,0 +1,120 @@
+At least these commands do something in Makkeroni:
+
+[[b;#fff;]freq: play a sinewave tone]
+arguments: frequency (int) length (int) velocity (float) attack time (secundum, float)
+example1: freq 666 3.4
+example2: freq * 3.4 <- with random frequency
+example3: freq <- random everything
+example4: freq *400+434 <- generates frequencies between 434-833 Hz
+
+[[b;#fff;]fmfreq: play an fm-modulated sinewave tone]
+arguments: carrier frequency (int) length (int) velocity (float) modulation frequency (int) modulation depth (int) 
+example1: fmfreq 555 3.4 0.8 3 5
+example2: fmfreq 555 3.4 0.8 * 5 <- with random mod. freq
+example3: fmfreq 555 3.4 0.8 <- with random mod.freq+depth
+example4: fmfreq <- random everything
+example5: fmfreq *1000+777 <- generates frequencies between 777-1776 Hz
+
+[[b;#fff;]tone: simple tone generator with filter]
+arguments: freq, length, velocity, waveform (square, triangle, sine or sawtooth), filter type (lowpass, bandpass, lowshelf etc), cutoff ratio (1 = equal to freq) 
+example1: tone 490 10 0.5 sawtooth lowpass 1.4
+example2: batch -n 15 tone *1000+1000 *10+5 * triangle  <- my favourite
+
+[[b;#fff;]makkeróni: fm-modulated synth with audio rate mathematical pair]
+arguments: carrier frequency (float) waveform (string) velocity (float) lfo frequency (float) lfo depth (float) lfo waveform (string) 2nd osc frequency (float), 2nd osc velocity (float) length (float) operator (*,/,!/,%,!%,+) buffersize (256,512,1024,2014 or *)
+
+[[b;#fff;]ls: list contents of the home, soundfiles & saved presets folders]
+
+[[b;#fff;]play: play a soundfile]
+arguments: soundfile.wav (string) playback rate (float, 1=normal) velocity (float) pan position (-1.0 = left, 0: center, 1.0 / right) 
+example1: play pergo1.wav 0.8 1 -0.3 
+example2: play <- simply play a random soundfile with random parameters...
+
+[[b;#fff;]loopplay: play a soundfile looped]
+arguments: soundfile.wav (string) playback rate (float, 1=normal) velocity (float) pan timeout (seconds, float)
+example: loopplay surr.wav 0.6 0.9 -0.4 4
+
+[[b;#fff;]fadeplay: play a soundfile looped, with linear fade-out]
+arguments and examples are same as loopplay's...
+
+[[b;#fff;]watch -n sec: repeatedly starts play, freq, fmfreq or any other commands]
+arguments: -n (float) - repeat time; -e (float) erode ratio
+example: watch -n 0.3 -e 1.1 fmfreq * 0.2 0.1 140 13 
+
+[[b;#fff;]batch -n instances + command to start: start a command in multiple instances]
+arguments: -n (int) - number of instances
+example: batch -n 8 freq : starts a freq command 8-times
+
+[[b;#fff;]fontsize + int: set fontsize] (default: 12)
+
+[[b;#fff;]statuslength + int: set number of lines in status bar] (default: 7)
+
+[[b;#fff;]stop: stop a loop-play thread or watch process]
+argument: thread id (int) 
+
+[[b;#fff;]sleep + thread id (int, region or all): sleep (mute) a process]
+example1: sleep all - mutes all threads
+example2: sleep 1-3 - mutes processes with the ID 1-3
+
+[[b;#fff;]resume + thread id (int, region or all): resume (unmute) a process]
+example: resume 1-4 - awakes threads with process ID 1,2,3 & 4
+
+[[b;#fff;]remakker + thread id (int): restart a loop-play or watch thread.] 
+provides new process id.
+if there's no thread id, it refreshes the last command.
+
+[[b;#fff;]replace + thread id (int) + command: replace a thread with a new command.]
+if there's no thread id provided, it replaces the most recently started process.
+
+[[b;#fff;]ps: list of running loopplay and watch processes], returns thread ID, user ID, time since start and the (main part of the) command
+example: ps > something.txt - writes out the process list to a textfile for further loading
+
+[[b;#fff;]seq: store a number of sequences into one of the 4 sequence slots]
+arguments: (list) sequence of numbers. Used by stepseq command for passing frequency values to freq or fmfreq. 
+example: seq -s 2 440,800,0,*: stores a list of 4 values to the slot #2, where 0 is for empty events, * is for random values.
+
+[[b;#fff;]seqlist: displays the contents of the stored sequences]
+
+[[b;#fff;]stepseq: simple stepsequencer for lists of numbers stored by the "seq" command]
+arguments: (int) slot number (between 0-3), -t (int) delay time between steps, "> string" target command (freq, fmfreq, tone, makkeróni or drum) and their parameters. 
+example: stepseq 0 -t 300 > fmfreq 0.3 <- starts a sequence stored at slot #1 with 300 msec speed, and passing the data to the fmfreq command with 0.3 sec note length 
+example: stepseq <- simply starts the sequence stored in the last used slot with random chosen delay time, and passing the data to the fmfreq command 
+
+[[b;#fff;]upload: upload a sample (wav,mp3 or ogg) into the soundfiles folder]
+
+[[b;#fff;]help: short description of commands]
+
+[[b;#fff;]clear: clear window]
+
+[[b;#fff;]cat: print the contents of a textfile]
+argument: textfile name (string)
+example1: cat about.txt <- print version number
+example2: cat something.txt > ps - loads and starts previously saved process list from a textfile (!)
+
+[[b;#fff;]connect: connect to the chat server]
+
+[[b;#fff;]disconnect: close the connection to the chat server]
+
+[[b;#fff;]wall: send a message to the other users through the chat server] - they appear on the title and in the javascript console!
+Also there's possibility to send commands to run on other connected Makkeróni users' computer with the -c option. You can set the ID region of users who can receive the commands with -min and -max options 
+argument: message (string) or -min (integer) -max (integer) -c command (string)
+example 1: wall -min 300 -max 600 -c freq <- freq command sent to connected users no. 300-600
+example 2: wall -c fmfreq * 0.4 <- fmfreq command sent to all of the connected users
+example 3: wall hey Makkeróni people <- message to everyone connected
+
+[[b;#fff;]degrade] + buffer size (int, 256, 512, 1024 and so on), int (distance): digital effect. Loud.
+
+[[b;#fff;]bitshift] + buffer size (int, 256, 512, 1024 and so on), float (ratio): digital effect. Extremely loud.
+
+[[b;#fff;]blackdeath] + buffer size (int, 256, 512, 1024 and so on), float (ratio): digital effect. Extremely loud.
+
+[[b;#fff;]deffect]: Remove digital effect from the chain.
+
+[[b;#fff;]something else]: not implemented yet :)
+
+[[gb;#fff;]General syntax:]
+- *: random number (randomize parameters on play, loopplay, fadeplay, freq, and fmfreq)
+- ↑ and ↓ arrows: browse command history
+- something and TAB key: autocomplete command (for. ex 'lo' + TAB gives 'loopplay' back)
+
+This file is available also at http://makker.hu/makkeroni/home/reference.txt .

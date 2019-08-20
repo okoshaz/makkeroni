@@ -1,0 +1,3 @@
+[[;#fff;]PID UID TIME COMMAND]
+2   698 512743 "watch -n * fmfreq *180+60 * 0.2 559.01 111300"
+4   698 485521 "watch -n * fmfreq *480+60 * 0.2 559.01 1110"

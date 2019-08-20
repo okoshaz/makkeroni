@@ -1,0 +1,29 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Introducing Makkeróni (http://makker.hu/makkeroni/)
+Balázs Kovács (kovacs.balazs@pte.hu)
+University of Pécs, Electronic Music and Media Arts BA programme
+Makker makerspace, Pécs
+
+Concept:
+~ Create a lazy-friendly interpeter:
+~ Commands instead of codes
+~ Auto-complete, auto-argumenting, command history
+~ Create an OS-like interface where interface sounds and intended sounds are on the same channel
+~ Learn to use linux shell with simulation of existing commands (ls, cat, ps, watch etc)
+~ Web-based: p2p communication among users; browser as instrument-like tool
+~ Low-level manipulate of audio data
+
+Features:
+~ audiofile playback - simply, loop'd, loop'd fade-out; upload is possible
+~ synthesis: simple sinewave, fm, filtered complex wave
+~ automatization: multiple start, timing of commands, sequencing, process management; export process list to the server for sharing
+~ randomization of parameters: 'free' or distributed random values on most of the arguments with * or in a *999+200 fashion
+~ network communication and remote commands
+~ simple pipeing
+~ verry strange and extra loud low-level digital effects
+
+Realization
+~ with JQueryTerminal -> https://terminal.jcubic.pl/
+~ using Webaudio, Javascript, Php
+~ inter-website communication done with node.js + socket.io
+

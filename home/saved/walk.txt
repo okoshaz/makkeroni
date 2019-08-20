@@ -1,0 +1,4 @@
+[[;#fff;]PID UID TIME COMMAND]
+1   483 426718 "loopplay szlotty1.wav 0.48 0.59 0.46"
+2   483 256363 "watch -n * fmfreq *340+4040 * 0.04 0.1 300"
+3   483 256356 "watch -n * fmfreq *340+4040 * 0.04 0.1 300"

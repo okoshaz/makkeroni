@@ -1,0 +1,5 @@
+Created by Balázs Kovács, 2016-
+Terminal based on Jcubic (https://terminal.jcubic.pl/). Audio: Webaudio.
+Name coin to the Makker makerspace and low-tech lab in Pécs. And also, 'makker' is the hungarian name for 'gibberish'...
+Reference: see 'cat reference.txt'
+Updates:   see 'cat changelog.txt'

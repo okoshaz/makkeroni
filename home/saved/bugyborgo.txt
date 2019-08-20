@@ -1,0 +1,2 @@
+[[;#fff;]PID UID TIME COMMAND]
+1   942 632344 "watch -n * fmfreq *160+100 * 0.1 5.9 340"

@@ -1,0 +1,21 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Introducing Makkeróni (http://makker.hu/makkeroni/)
+Balázs Kovács (kovacs.balazs@pte.hu)
+University of Pécs, Electronic Music and Media Arts BA programme
+Makker makerspace, Pécs
+
+Inspirations:
+~ Sonic Finder (W.Gaver)-> https://makker.hu/makkeroni/temp-prez/sonicfinder.jpg
+~ Proc filesystem music -> http://kbalazs.periszkopradio.hu/index.php?file=works/2005-lad
+~ Webaudio projects like Slang (K.Stetz) -> http://slang.kylestetz.com/ or Gibber (C.Roberts) -> https://gibber.cc/
+~ BASH itself
+
+Previous web-based works
+~ Webcards (2016) -> http://kbalazs.periszkopradio.hu/works/webcards/
+~ Forgattató (2018) -> http://kbalazs.periszkopradio.hu/egyeb/forgattato.html
+~ Ring the Web (2018) -> http://makker.hu/RingTheWeb/
+~ Avaros (2018) -> http://kbalazs.periszkopradio.hu/egyeb/avaros/
+~ Sonic picture (2018) -> https://falusag.hangfarm.hu/2018/02/vasarnapi-kepeshang-8/
+~ MozsiOS -> http://mumia.art.pte.hu/mami/kbalazs/mozsios/
+
+

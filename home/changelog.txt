@@ -1,0 +1,71 @@
+changelog - makkeróni
+http://makker.hu/makkeroni/home/changelog.txt
+
+[[;#fff;]12. dec 2016.]
+1st presentation as a santa claus gift for Péter Mozsdényi at http://mumia.art.pte.hu/mami/kbalazs/mozsios/ 
+
+[[;#fff;]19. feb 2017. - 19. mai 2018.]
+working version as AudiOS
+
+[[;#fff;]19. mai 2018.]
+changed the name to Makkeroni, and further developments:
+added fmfreq
+added fadeplay
+added * to randomize parameters
+added various improvements (unique username)
+added cat to present textfiles: about.txt, reference.txt, changelog.txt :)
+
+[[;#fff;]21. mai 2018.]
+added sounds to the normal unix commands (ls, help etc.)
+added 'wall' command in order to chat with others via the title of the page and the javascript console
+
+[[;#fff;]22. mai 2018.]
+published everything as http://makker.hu/makkeroni/ !
+
+[[;#fff;]24. nov 2018.]
++updated to jquery terminal v2.0.1. some things doesn't work. 
++added watch - the command for repeatedly running other commands like play, freq or fmfreq.
++added ps command - it presents the running processes and their IDs! thanks for recommending it, unknown ICLC p2p Reviewer!:)
++fontsize works again! life is good...
+
+[[;#fff;]25. nov 2018.]
++ refined pid display - instead of scrolling them, there are some lines above going to display the current values.
++ "click here to stop" messages on watch-ed processes and loopplay's are changed to blinkin' stars... why not. You can click them to remove the process, anyway stop, sleep and resume commands still also work! 
++ sleep, resume work with regions (for ex 1-5) and "all" parameters too
+
+[[;#fff;]27. nov 2018.]
++ the first pipe! hip-hop hurray!
+ps > something.txt saves the list of processes to a textfile, and...
+cat something.txt > ps reads them back! whoaa... 
++ updated random parameters on freq values of freq and fmfreq commands: if You type *1000, it sets a range 0-9999; if *1000+500, generates random numbers between 500-1500 Hz. I'll add this feature to relevant arguments on other commands too.
+
+[[;#fff;]8. dec 2018.]
++ added batch command: it can start any command in the same time in multiple instances. Can be good for example as a batch -n 8 freq to easily play a 8-tone sine pattern. 
+
+[[;#fff;]9. dec 2018.]
++ added some weird digital effects. Please don't use them with headphones or in sensitive environment! They're extremely loud. 
+The commands are blackdeath, degrade and bitshift. You can run only one in a time, and it can be removed with the 'deffect' command.
+Only 'deffect' is autocompleted because of security risks.
+Be aware please...
+
+[[;#fff;]10. jan 2019.]
++ added separate connect and disconnect commands to open up or close the network connection for wall commands;
++ modified wall command to let sending commands to remote computers! just simply use "wall -c somecommand". please use the "connect" command before.
+
+[[;#fff;]11. jan 2019.]
++ added makkeróni command for generating complex, fm/digital synthesized waves. has a lots and lots of arguments... (but works without any arguments or with asterisks as well!)
++ added on-line help (with the "--help" option) to the commands... So just type "makkeróni --help" and enjoy:)
++ autocomplete is now situation-dependent, which means that if You type play or cat, tab brings back the filenames to load.. (thanks, Jakub Jankiewitz to point out how to manage it!)
+
+[[;#fff;]13. jan 2019.]
++ added seq for storing number of sequences in one of the 4 slots, and...
++ added stepseq (after a long time of debugging) for playing those sequences! see their --help or the reference for examples.
++ added seqlist for displaying stored sequences.
++ added tone for generating different waveforms than sine, fm and makkeróni... good for long lasting pads, maybe together with batch.
+
+[[;#fff;]15. jan 2019.]
++ wall updated to be possible to set the region of users who can process the commands sent. with -min and -max options
+
+[[;#fff;]17. jan 2019.]
++ stepseq now works with 'drum' as target: it plays
+* Makkeróni was presented firstly for the public on the ICLC 2019 in Madrid. Thanks for attending!  

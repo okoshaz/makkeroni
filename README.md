@@ -2,3 +2,6 @@
 Makkeróni web based live coding system
 
 http://makker.hu/makkeroni/
+
+
+i don't understand git, so i just hope that the repository contains every files what makkeróni uses.

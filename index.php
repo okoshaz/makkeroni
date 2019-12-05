@@ -2037,7 +2037,7 @@ term.echo("freq1: " +freq1+", wave1: "+wave1+", velo1: "+velo1.toFixed(2)+", mod
 
 			{
 			if(message[0]!='user'+user+':'){
-				fmszinti((uzenet.length*30)% 500,uzenet.length/30,0.4, Math.random()*4080,Math.random()*4080);
+//				fmszinti((uzenet.length*30)% 500,uzenet.length/30,0.4, Math.random()*4080,Math.random()*4080);
 				term.echo(uzenet);
 			}
 			}
@@ -2748,8 +2748,8 @@ term.echo("freq1: " +freq1+", wave1: "+wave1+", velo1: "+velo1.toFixed(2)+", mod
             greetings:  
 "[[gb;#0f0;]           *     *           ]\n"+
 "[[gb;#0f0;]       *             *       ]\n"+
-"[[gb;#0f0;]    *   **   **   **   *     ][[gb;#fff;]MAKKERÓNI]\n"+
-"[[gb;#0f0;]   *       ** ** **     *    ]A live webaudio operating system.\n"+
+"[[gb;#0f0;]    *   **   **   **   *     ][[gb;#fff;]MAKKERÓNI] greets WebAudioConf in Trondheim!\n"+
+"[[gb;#0f0;]   *       ** ** **     *    ]It's a live webaudio operating system.\n"+
 "[[gb;#0f0;]  *        ******        *   ]Type [[b;#fff;]help] for more instructions!\n"+
 "[[gb;#0f0;]  *         ****         *   ]News: [[b;#fff;]cat changelog.txt],\n"+
 "[[gb;#0f0;]  *        ******        *   ]Reference: [[b;#fff;]cat reference.txt].\n"+

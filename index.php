@@ -60,6 +60,7 @@
 	var statusLine = 7; // status lines for ps
 	var socket; 
 	var connected = false; // boolean for connection to the chat server 
+	var effects = 0;
 	
     jQuery(document).ready(function($) {
      
@@ -67,7 +68,7 @@
 $('body').terminal(function(command, term) {
 
 
-// és akkor ide jönnek azok a szkriptek, amiknek kell a term:
+// jquery term needs them:
 
 	var parancs = $.terminal.parse_command(command);
 	var opciok = $.terminal.parse_options(parancs.args,command);
@@ -1368,6 +1369,7 @@ term.echo("freq1: " +freq1+", wave1: "+wave1+", velo1: "+velo1.toFixed(2)+", mod
 
 			term.echo('Welcome to Bitshiftónia! Params for buffersize: ' + param1 + ', bitshiftindex: ' +param2);
 			szaggato(param1.toFixed(2), param2, 7);
+			effects++;
 		  }
 		}
 
@@ -1397,6 +1399,7 @@ term.echo("freq1: " +freq1+", wave1: "+wave1+", velo1: "+velo1.toFixed(2)+", mod
 				}
 
 			szaggato(param1, param2, 3);
+			effects++;
 			term.echo("Type 'deffect' to turn it off....");
 
 		 }
@@ -1437,6 +1440,7 @@ term.echo("freq1: " +freq1+", wave1: "+wave1+", velo1: "+velo1.toFixed(2)+", mod
 				}
 
 			szaggato(param1, param2, 6, param3);
+			effects++;
 		}
 		}
 
@@ -1479,6 +1483,7 @@ term.echo("freq1: " +freq1+", wave1: "+wave1+", velo1: "+velo1.toFixed(2)+", mod
 				}
 
 			szaggato(param1, param2, param3, param4);
+			effects++;
 
 		}
 
@@ -1490,9 +1495,16 @@ term.echo("freq1: " +freq1+", wave1: "+wave1+", velo1: "+velo1.toFixed(2)+", mod
 		}
 		else {
 
-		masterGain.disconnect(scriptNode);
-		scriptNode.disconnect(context.destination);
-		masterGain.connect(context.destination);
+		if(effects>0){
+			masterGain.disconnect(scriptNode);
+			scriptNode.disconnect(context.destination);
+			masterGain.connect(context.destination);
+			effects--;
+			}
+			else {
+			term.echo('No effect to turn off...');
+			}
+	
 		}
 		}
 

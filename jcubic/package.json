@@ -25,7 +25,7 @@
   },
   "homepage": "http://terminal.jcubic.pl",
   "dependencies": {
-    "jquery": "^2.1.4"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {
     "istanbul": "^0.4.3",
